@@ -58,7 +58,7 @@
 
                             <div class="col-md-7">
                                 @if (count($permissions))
-                                    @foreach ( as $permission)
+                                    @foreach ($permissions as $permission)
                                         <div class="form-check form-check-inline">
                                             <input
                                                 class="form-check-input"

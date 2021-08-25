@@ -6,8 +6,8 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    Permissions
-                    <a href="{{ route('admin.permission.create') }}" class="btn btn-sm btn-secondary float-right">Create</a>
+                    Role
+                    <a href="{{ route('admin.role.create') }}" class="btn btn-sm btn-secondary float-right">Create</a>
                 </div>
 
                 <div class="card-body">
@@ -26,16 +26,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($permissions as $permission)
+                            @foreach ($roles as $role)
                             <tr>
-                                <td>{{ $permission->id }}</td>
-                                <td>{{ $permission->name }}</td>
-                                <td>{{ $permission->display_name }}</td>
+                                <td>{{ $role->id }}</td>
+                                <td>{{ $role->name }}</td>
+                                <td>{{ $role->display_name }}</td>
                                 <td>
-                                    <form action="{{ route('admin.permission.destroy', $permission->id) }}" method="post">
+                                    <form action="{{ route('admin.role.destroy', $role->id) }}" method="post">
                                         @method('DELETE') @csrf
                                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                            <a href="{{ route('admin.permission.edit', $permission->id) }}" class="btn btn-info text-white">Edit</a>
+                                            <a href="{{ route('admin.role.edit', $role->id) }}" class="btn btn-info text-white">Edit</a>
                                             <button type="submit" class="btn btn-danger text-white">Delete</button>
                                         </div>
                                     </form>
@@ -45,7 +45,7 @@
                         </tbody>
                     </table>
 
-                    {{ $permissions->links() }}
+                    {{ $roles->links() }}
                 </div>
             </div>
         </div>
